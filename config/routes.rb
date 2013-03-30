@@ -1,4 +1,4 @@
-Rails3BootstrapDeviseCancan::Application.routes.draw do
+EpochClient::Application.routes.draw do
   authenticated :user do
     root :to => 'home#index'
   end
