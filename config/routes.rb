@@ -1,4 +1,6 @@
 EpochClient::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   resources :clients do 
     get :list, on: :collection
   end
