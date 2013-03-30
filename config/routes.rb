@@ -1,5 +1,7 @@
 EpochClient::Application.routes.draw do
-  resources :clients
+  resources :clients do 
+    get :list, on: :collection
+  end
 
 
   authenticated :user do
