@@ -1,4 +1,7 @@
 EpochClient::Application.routes.draw do
+  resources :clients
+
+
   authenticated :user do
     root :to => 'home#index'
   end
