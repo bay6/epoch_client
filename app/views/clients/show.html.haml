@@ -1,0 +1,23 @@
+%p#notice= notice
+
+%p
+  = image_tag(@client.avatar.url, class: 'img-polaroid') if @client.avatar.present?
+%p
+  %b 客户名称:
+  = @client.name
+%p
+  %b 营业时间:
+  = @client.opening_hour
+%p
+  %b 客户地址:
+  = @client.address
+%p
+  %b 联系电话:
+  = @client.phone_num
+%p
+  %b 营业信息:
+  = @client.description
+
+= link_to '修改', edit_client_path(@client)
+\|
+= link_to '返回', clients_path
