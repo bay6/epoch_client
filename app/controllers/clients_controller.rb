@@ -2,7 +2,8 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.all
+    params[:category_id] ||= :all
+    @clients = Client.where(category_id: params[:category_id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -11,7 +12,8 @@ class ClientsController < ApplicationController
   end
 
   def list
-    @clients = Client.all
+    params[:category_id] ||= :all
+    @clients = Client.where(category_id: params[:category_id])
 
     respond_to do |format|
       format.html # index.html.erb
