@@ -2,8 +2,11 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    params[:category_id] ||= :all
-    @clients = Client.where(category_id: params[:category_id])
+    @clients = if params[:category_id].blank?
+      Client.all
+    else
+      Client.where(category_id: params[:category_id])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,8 +15,11 @@ class ClientsController < ApplicationController
   end
 
   def list
-    params[:category_id] ||= :all
-    @clients = Client.where(category_id: params[:category_id])
+    @clients = if params[:category_id].blank?
+      Client.all
+    else
+      Client.where(category_id: params[:category_id])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
