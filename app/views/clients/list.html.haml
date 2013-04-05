@@ -3,9 +3,9 @@
     .span3
       .well{class: 'sidebar-nav'}
         %ul{class: 'nav nav-list'}
-          - Category.pluck(:name).each do |category|
+          - Category.all.each do |category|
             %li
-              = category
+              = link_to category.name, list_clients_path(category_id: category.id)
     .span9
       -#.hero-unit
         -#Some notice Here
