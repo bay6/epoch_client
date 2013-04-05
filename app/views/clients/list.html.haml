@@ -1,18 +1,26 @@
-.row-fluid
-  %ul.thumbnails
-    - @clients.each do |client|
-      %li.span8
-        .thumbnail
-          = image_tag( client.avatar.url, class: 'img-polaroid img-rounded') if client.try(:avatar).present?
-          %table{class: 'table table-condensed'}
-            %tr
-              %td= client.name
-            %tr
-              %td= client.opening_hour
-            %tr
-              %td= client.address
-            %tr
-              %td= client.phone_num
-            %tr
-              %td= client.description
-
+.container-fluid
+  .row-fluid
+    .span3
+      .well{class: 'sidebar-nav'}
+        %ul{class: 'nav nav-list'}
+          - Category.pluck(:name).each do |category|
+            %li
+              = category
+    .span9
+      -#.hero-unit
+        -#Some notice Here
+      .row-fluid
+        - @clients.each do |client|
+          .span4
+            = image_tag( client.avatar.thumb.url, class: 'img-polaroid img-rounded') if client.try(:avatar).present?
+            %table{class: 'table table-condensed'}
+              %tr
+                %td= client.name
+              %tr
+                %td= client.opening_hour
+              %tr
+                %td= client.address
+              %tr
+                %td= client.phone_num
+              %tr
+                %td= client.description
