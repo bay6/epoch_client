@@ -14,7 +14,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #storage :file
    storage :fog
   def cache_dir
-    'tmp/clients_cache'
+    "#{Rails.root}/tmp/clients_cache"
   end
 
   # Override the directory where uploaded files will be stored.
