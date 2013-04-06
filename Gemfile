@@ -8,6 +8,7 @@ group :assets do
 end
 gem 'rails_admin'
 gem 'carrierwave'
+gem 'fog'
 gem 'acts-as-taggable-on'
 gem 'rmagick', require: 'RMagick'
 gem 'jquery-rails'
