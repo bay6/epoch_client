@@ -1,12 +1,22 @@
 .container-fluid
   .row-fluid
-    .span3
-      .well{class: 'sidebar-nav'}
-        %ul{class: 'nav nav-list'}
-          - Category.all.each do |category|
-            %li
-              = link_to category.name, list_clients_path(category_id: category.id)
-    .span9
+    .masthead
+      .navbar
+        .navbar-inner
+          .container
+            %ul.nav
+              - Category.all.each do |category|
+                %li
+                  = link_to category.name, list_clients_path(category_id: category.id)
+                  
+    -#.span3
+      -#.well{class: 'sidebar-nav'}
+        -#%ul{class: 'nav nav-list'}
+          -#- Category.all.each do |category|
+            -#%li
+              -#= link_to category.name, list_clients_path(category_id: category.id)
+
+    .span11
       -#.hero-unit
         -#Some notice Here
       .row-fluid
