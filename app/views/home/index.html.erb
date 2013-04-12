@@ -1,4 +1,7 @@
+#encoding: utf-8
 <h3>Home</h3>
 <% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+  <p>User: <%= link_to user.name, user %></p>
 <% end %>
+<h3> 管理员入口 </h3>
+<%= link_to 'Admin Access', rails_admin_path%>
