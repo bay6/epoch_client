@@ -17,7 +17,7 @@
 %p
   %b 营业信息:
   = @client.description
-
-= link_to '修改', edit_client_path(@client)
-\|
-= link_to '返回', clients_path
+- if user_signed_in?
+  = link_to '修改', edit_client_path(@client)
+  \|
+  = link_to '返回', clients_path
