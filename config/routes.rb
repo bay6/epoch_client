@@ -9,7 +9,7 @@ EpochClient::Application.routes.draw do
   authenticated :user do
     root :to => 'home#index'
   end
-  root :to => "home#index"
+  root :to => "clients#list"
   devise_for :users
   resources :users
 end
