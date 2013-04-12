@@ -22,7 +22,8 @@
       .row-fluid
         - @clients.each do |client|
           .span4
-            = image_tag( client.avatar.thumb.url, class: 'img-polaroid img-rounded') if client.try(:avatar).present?
+            = link_to client do
+              = image_tag( client.avatar.thumb.url, class: 'img-polaroid img-rounded') if client.try(:avatar).present?
             %table{class: 'table table-condensed'}
               %tr
                 %td= client.name
