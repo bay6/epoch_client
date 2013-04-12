@@ -10,6 +10,6 @@ EpochClient::Application.routes.draw do
     root :to => 'home#index'
   end
   root :to => "clients#list"
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
   resources :users
 end
