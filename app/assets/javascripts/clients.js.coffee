@@ -12,28 +12,29 @@ $(window).load ->
   else
     mapdiv.style.width = "750px"
     mapdiv.style.height = "400px"
-
-
+  latitude = parseFloat($('#latitude').val())
+  longitude = parseFloat($('#map').data('longitude'))
+  console.log(latitude)
   map = new GMaps(
     div: "#map"
-    lat: -12.043333
-    lng: -77.028333
+    lat: latitude
+    lng: longitude
   )
-  map.addMarker
-    lat: -12.043333
-    lng: -77.03
-    title: "Lima"
-    details:
-      database_id: 42
-      author: "HPNeo"
 
-    click: (e) ->
-      console.log e  if console.log
-      alert "You clicked in this marker"
+  #map.addMarker
+    #lat: latitude
+    #lng: logitude
+    #title: "Lima"
+    #details:
+      #database_id: 42
+      #author: "HPNeo"
+    #click: (e) ->
+      #console.log e  if console.log
+      #alert "You clicked in this marker"
 
   map.addMarker
-    lat: -12.042
-    lng: -77.028333
+    lat: latitude
+    lng: longitude
     title: "Marker with InfoWindow"
-    infoWindow:
-      content: "<p>HTML Content</p>"
+    #infoWindow:
+      #content: "<p>HTML Content</p>"
