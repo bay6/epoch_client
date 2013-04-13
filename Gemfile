@@ -12,7 +12,7 @@ gem 'fog'
 gem 'acts-as-taggable-on'
 gem 'rmagick', require: 'RMagick'
 gem 'jquery-rails'
-gem 'haml-rails'
+gem 'slim-rails'
 gem 'debugger', group: [:development, :test]
 gem 'pg', group: :production
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
