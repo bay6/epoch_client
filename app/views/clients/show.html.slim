@@ -20,7 +20,7 @@ p
 = hidden_field_tag 'latitude', @client.try(:latitude)
 p
   b 地理位置
-  div#map 'data-longitude' =(> @client.try(:longitude))
+  div id='map' data-longitude=@client.try(:longitude)
 - if user_signed_in?
   = link_to '修改', edit_client_path(@client)
   | \|
