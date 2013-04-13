@@ -17,7 +17,11 @@
 %p
   %b 营业信息:
   = @client.description
+%p
+  %b 地理位置 
+  %div#map
 - if user_signed_in?
   = link_to '修改', edit_client_path(@client)
   \|
   = link_to '返回', clients_path
+-#= javascript_include_tag 'http://jquery-ui-map.googlecode.com/svn/trunk/ui/jquery.ui.map.js'
