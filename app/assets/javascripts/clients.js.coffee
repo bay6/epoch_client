@@ -13,6 +13,7 @@
       mapdiv.style.width = "850px"
       mapdiv.style.height = "500px"
     map = new GMaps(
+      zoom: 11
       div: 'report_map'
       lat: 40.744819
       lng: -73.990133
