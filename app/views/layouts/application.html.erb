@@ -6,6 +6,8 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Epoch Client List" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag 'http://maps.google.com/maps/api/js?sensor=true' %>
+    <%= javascript_include_tag 'https://raw.github.com/HPNeo/gmaps/master/gmaps.js'%>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
