@@ -1,7 +1,9 @@
 #encoding: utf-8
-<h3>Home</h3>
+<h3>管理员主页</h3>
+当前用户列表：
 <% @users.each do |user| %>
   <p>User: <%= link_to user.name, user %></p>
 <% end %>
-<h3> 管理员入口 </h3>
-<%= link_to 'Admin Access', rails_admin_path%>
+<%= link_to '管理员入口', rails_admin_path%>
+<br/>
+<%= link_to '地址换坐标工具', 'http://www.latlong.net/convert-address-to-lat-long.html'%>
