@@ -1,0 +1,28 @@
+.container-fluid
+  .row-fluid
+    .masthead
+      .navbar
+        .navbar-inner
+          .container
+            ul.nav
+              - Category.all.each do |category|
+                li
+                  = link_to category.name, list_clients_path(category_id: category.id)
+
+    .span11
+      .row-fluid
+        - @clients.each do |client|
+          .span4
+            = link_to client do
+              = image_tag( client.avatar.thumb.url, class: 'img-polaroid img-rounded') if client.try(:avatar).present?
+            table class='table table-condensed'
+              tr
+                td= client.name
+              tr
+                td= client.opening_hour
+              tr
+                td= client.address
+              tr
+                td= client.phone_num
+              tr
+                td= client.description

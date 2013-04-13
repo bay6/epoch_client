@@ -1,28 +1,28 @@
-%p#notice= notice
+p#notice= notice
 
-%p
+p
   = image_tag(@client.avatar.url, class: 'img-polaroid') if @client.avatar.present?
-%p
-  %b 客户名称:
+p
+  b 客户名称:
   = @client.name
-%p
-  %b 营业时间:
+p
+  b 营业时间:
   = @client.opening_hour
-%p
-  %b 客户地址:
+p
+  b 客户地址:
   = @client.address
-%p
-  %b 联系电话:
+p
+  b 联系电话:
   = @client.phone_num
-%p
-  %b 营业信息:
+p
+  b 营业信息:
   = @client.description
 = hidden_field_tag 'latitude', @client.try(:latitude)
-%p
-  %b 地理位置 
-  %div#map{'data-longitude' => @client.try(:longitude)}
+p
+  b 地理位置
+  div id='map' data-longitude=@client.try(:longitude)
 - if user_signed_in?
   = link_to '修改', edit_client_path(@client)
-  \|
+  | \|
   = link_to '返回', clients_path
--#= javascript_include_tag 'http://jquery-ui-map.googlecode.com/svn/trunk/ui/jquery.ui.map.js'
+/= javascript_include_tag 'http://jquery-ui-map.googlecode.com/svn/trunk/ui/jquery.ui.map.js'

@@ -1,0 +1,5 @@
+#encoding: utf-8
+h2 商户地图 
+div id="report_map"
+- @clients.each do |client|
+  = hidden_field_tag "client#{client.id}", nil, {'data-latitude' => client.latitude, 'data-longitude' => client.longitude}

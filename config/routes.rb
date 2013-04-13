@@ -3,6 +3,7 @@ EpochClient::Application.routes.draw do
 
   resources :clients do 
     get :list, on: :collection
+    get :map, on: :collection
   end
 
 

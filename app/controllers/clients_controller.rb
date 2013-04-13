@@ -27,6 +27,19 @@ class ClientsController < ApplicationController
     end
   end
 
+  def map
+    @clients = if params[:category_id].blank?
+      Client.all
+    else
+      Client.where(category_id: params[:category_id])
+    end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @clients }
+    end
+  end
+
   # GET /clients/1
   # GET /clients/1.json
   def show

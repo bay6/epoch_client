@@ -1,0 +1,32 @@
+h1 Listing clients
+
+table
+  tr
+    th
+    th Name
+    th Opening hour
+    th Address
+    th Address
+    th Phone num
+    th Description
+    th
+    th
+    th
+
+  - @clients.each do |client|
+    tr
+
+      td= image_tag( client.avatar.thumb.url, class: 'img-rounded') if client.try(:avatar).try(:thumb).present?
+      td= client.name
+      td= client.opening_hour
+      td= client.address
+      td= client.address
+      td= client.phone_num
+      td= client.description
+      td= link_to 'Show', client
+      td= link_to 'Edit', edit_client_path(client)
+      td= link_to 'Destroy', client, :method => :delete, :data =>   confirm='Are you sure?' 
+
+br
+
+= link_to 'New Client', new_client_path
