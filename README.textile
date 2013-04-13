@@ -1,6 +1,0 @@
-## project address
-http://epoc.herokuapp.com/
-
-## about epoch client
-
-maintain client list
