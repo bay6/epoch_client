@@ -6,6 +6,9 @@
 <%= link_to "客户推荐列表", root_path, :class => 'brand' %>
 <div class='nav-collapse collapse'>
   <ul class="nav">
+    <li>
+      <%= link_to '商户地图', map_clients_path%>
+    </li>
     <% if user_signed_in? %>
       <li>
       <%= link_to '退出', destroy_user_session_path, :method=>'delete' %>
