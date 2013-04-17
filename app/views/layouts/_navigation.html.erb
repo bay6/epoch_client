@@ -24,7 +24,7 @@
       </li>
       <% if current_user.has_role? :admin %>
         <li>
-        <%= link_to '管理员入口', users_path %>
+        <%= link_to '管理员入口', rails_admin_path %>
         </li>
       <% end %>
     <% else %>

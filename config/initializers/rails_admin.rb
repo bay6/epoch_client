@@ -13,7 +13,10 @@ RailsAdmin.config do |config|
 
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
-
+  config.authenticate_with {}
+  config.authorize_with do
+    redirect_to '/clients/list', error: 'No such route for current user' unless current_user.has_role? 'admin'
+  end
   # If you want to track changes on your models:
   # config.audit_with :history, 'User'
 
