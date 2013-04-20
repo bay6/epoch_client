@@ -15,6 +15,18 @@
          .item
             = link_to client do
               = image_tag( client.avatar.thumb.url, class: 'img-polaroid img-rounded') if client.try(:avatar).present?
+            div
+              span
+                - if current_user.likes? client
+                  = unlike_link_for client
+                - else
+                  = like_link_for client
+              span style='margin-left: 40px; color: red;'
+                = client.like_count
+                '喜欢 
+              span style='color: #1AA319;'
+                = client.visit_number
+                '浏览
             table class='table table-condensed'
               tr
                 td= client.name
