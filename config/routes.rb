@@ -6,6 +6,9 @@ EpochClient::Application.routes.draw do
     get :map, on: :collection
   end
 
+  delete  'likes/:resource_name/:resource_id' => "likes#destroy", :as => 'like'
+  post    'likes/:resource_name/:resource_id' => "likes#create",  :as => 'like'
+
 
   #authenticated :user do
     #root :to => 'home#index'

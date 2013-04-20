@@ -132,8 +132,14 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    keytar (1.5.3)
+      activesupport
     launchy (2.2.0)
       addressable (~> 2.3)
+    likeable (0.1.2)
+      activesupport
+      keytar (>= 1.5.2)
+      redis
     mail (2.5.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -193,6 +199,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    redis (3.0.3)
     remotipart (1.0.5)
     rmagick (2.13.2)
     rolify (3.2.0)
@@ -275,6 +282,7 @@ DEPENDENCIES
   fog
   jquery-rails
   launchy (>= 2.2.0)
+  likeable
   pg
   quiet_assets (>= 1.0.1)
   rails (= 3.2.13)
