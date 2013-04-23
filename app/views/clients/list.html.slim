@@ -40,3 +40,5 @@
                 td= client.phone_num
               tr
                 td= client.description
+              tr
+                td= link_to '地图', "http://maps.google.com/?q=#{client.latitude}, #{client.longitude}"
