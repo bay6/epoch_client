@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/hlee/rating.git
+  revision: 65b9d325081259c918b2fe809a1c8376e7489223
+  specs:
+    rating (0.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -287,6 +293,7 @@ DEPENDENCIES
   quiet_assets (>= 1.0.1)
   rails (= 3.2.13)
   rails_admin
+  rating!
   rmagick
   rolify (>= 3.2.0)
   rspec-rails (>= 2.12.2)

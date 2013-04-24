@@ -6,6 +6,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+gem 'rating', :git => 'git://github.com/hlee/rating.git'
 gem 'rails_admin'
 gem 'likeable'
 gem 'carrierwave'
