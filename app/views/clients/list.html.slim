@@ -17,7 +17,9 @@
               = image_tag( client.avatar.thumb.url, class: 'img-polaroid img-rounded') if client.try(:avatar).present?
             div
               span
-                - if current_user.likes? client
+                - if current_user.blank?
+                  '赞
+                - elsif current_user.likes? client
                   = unlike_link_for client
                 - else
                   = like_link_for client
@@ -38,3 +40,5 @@
                 td= client.phone_num
               tr
                 td= client.description
+              tr
+                td= link_to '地图', "http://maps.google.com/?q=#{client.latitude}, #{client.longitude}"
