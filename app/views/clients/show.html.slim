@@ -26,6 +26,8 @@ p
   | \|
   = link_to '返回', clients_path
 /= javascript_include_tag 'http://jquery-ui-map.googlecode.com/svn/trunk/ui/jquery.ui.map.js'
+#disqus_thread
+= render :partial => "shared/disqus", :locals => { title: '评论' }
 javascript:
   $(window).load(function(){
     $.fn.loadsinglemap()
