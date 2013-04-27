@@ -7,6 +7,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'rails_admin'
+gem 'likeable'
 gem 'carrierwave'
 gem 'fog'
 gem 'acts-as-taggable-on'
