@@ -287,6 +287,7 @@ DEPENDENCIES
   figaro (>= 0.5.3)
   fog
   jquery-rails
+  kaminari
   launchy (>= 2.2.0)
   likeable
   pg

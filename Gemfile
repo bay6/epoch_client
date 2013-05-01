@@ -7,6 +7,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'rating', :git => 'git://github.com/hlee/rating.git'
+gem 'kaminari'
 gem 'rails_admin'
 gem 'likeable'
 gem 'carrierwave'
