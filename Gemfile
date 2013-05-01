@@ -8,6 +8,7 @@ group :assets do
 end
 gem 'rating', :git => 'git://github.com/hlee/rating.git'
 gem 'kaminari'
+gem 'annotate', git: 'git://github.com/ctran/annotate_models.git', group: :development
 gem 'rails_admin'
 gem 'likeable'
 gem 'carrierwave'

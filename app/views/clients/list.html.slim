@@ -8,6 +8,13 @@
               - Category.all.each do |category|
                 li
                   = link_to category.name, list_clients_path(category_id: category.id)
+        .dropdown
+          a.dropdown-toggle data-toggle='dropdown' href='#'
+            '地区
+          ul.dropdown-menu role='menu' aria-labelledby='dLabel'
+            - District.all.each do |district|
+              li
+                = link_to district.name, list_clients_path(district_id: district.id)
 
     .span11
       .row-fluid.items-container.waterfall
