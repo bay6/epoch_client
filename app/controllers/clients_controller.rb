@@ -20,6 +20,7 @@ class ClientsController < ApplicationController
     else
       Client.where(category_id: params[:category_id])
     end
+    @clients = Kaminari.paginate_array(@clients).page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
