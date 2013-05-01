@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: clients
+#
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  opening_hour :string(255)
+#  address      :string(255)
+#  phone_num    :string(255)
+#  description  :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  avatar       :string(255)
+#  category_id  :integer
+#  latitude     :float
+#  longitude    :float
+#
+
 class Client < ActiveRecord::Base
   include Likeable
   attr_accessible :address, :description, :name, :opening_hour, :phone_num, :avatar, :industry_list, :category, :category_id, :remove_avatar, :avatar_cache, :latitude, :longitude
