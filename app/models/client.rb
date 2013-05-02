@@ -22,6 +22,13 @@ class Client < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   acts_as_taggable_on :industry
   belongs_to :category
+  belongs_to :district
+  scope :by_category, (lambda do |category_id|
+    where(category_id: category_id) unless category_id.nil?
+  end)
+  scope :by_district, (lambda do |district_id|
+    where(district_id: district_id) unless district_id.nil?
+  end)
 
   def visit_number
     $redis.get("client_of_#{id}_visit").to_i
