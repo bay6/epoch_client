@@ -2,11 +2,7 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = if params[:category_id].blank?
-      Client.all
-    else
-      Client.where(category_id: params[:category_id])
-    end
+      @clients = Client.by_category(params[:category_id]).by_district(params[:district_id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,11 +11,7 @@ class ClientsController < ApplicationController
   end
 
   def list
-    @clients = if params[:category_id].blank?
-      Client.all
-    else
-      Client.where(category_id: params[:category_id])
-    end
+    @clients = Client.by_category(params[:category_id]).by_district(params[:district_id])
     @clients = Kaminari.paginate_array(@clients).page params[:page]
 
     respond_to do |format|
