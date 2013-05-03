@@ -9,9 +9,11 @@
                 li
                   = link_to category.name, list_clients_path({category_id: category.id, district_id: params[:district_id]})
                   -#hidden_field_tag :category_id, params[:category_id]
-        .dropdown
-          a.dropdown-toggle data-toggle='dropdown' href='#'
-            '地区
+        .btn-group
+          button.btn
+            = params[:distric_id].present? ? District.find(params[:ditrict_id]).name : '地区'
+          button class='btn dropdown-toggle' data-toggle='dropdown'
+            span.caret
           ul.dropdown-menu role='menu' aria-labelledby='dLabel'
             - District.all.each do |district|
               li
