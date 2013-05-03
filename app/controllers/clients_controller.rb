@@ -11,6 +11,8 @@ class ClientsController < ApplicationController
   end
 
   def list
+    @district_id = params[:district_id]
+    @category_id = params[:category_id]
     @clients = Client.by_category(params[:category_id]).by_district(params[:district_id])
     @clients = Kaminari.paginate_array(@clients).page params[:page]
 
