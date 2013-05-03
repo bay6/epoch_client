@@ -11,4 +11,8 @@
 class Category < ActiveRecord::Base
   attr_accessible :name
   has_many :clients
+  def active? id
+    return 'active' if id.present? and self == Category.find(id)
+    nil
+  end
 end
