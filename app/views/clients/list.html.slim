@@ -4,14 +4,14 @@
       .navbar
         .navbar-inner
           .container
-            ul.nav
+            ul class='nav'
               - Category.all.each do |category|
-                li
+                li class="#{category.active? @category_id}"
                   = link_to category.name, list_clients_path({category_id: category.id, district_id: params[:district_id]})
                   -#hidden_field_tag :category_id, params[:category_id]
         .btn-group
           button.btn
-            = params[:distric_id].present? ? District.find(params[:ditrict_id]).name : '地区'
+            = show_district @district_id 
           button class='btn dropdown-toggle' data-toggle='dropdown'
             span.caret
           ul.dropdown-menu role='menu' aria-labelledby='dLabel'
