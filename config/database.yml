@@ -18,18 +18,19 @@ test: &test
   pool: 5
   timeout: 5000
 
-#production:
-  #adapter: postgresql
-  #encoding: unicode
-  #database: test-postgres_production
-  #pool: 5
-  #username: test-postgres
-  #password:
 production:
-  adapter: sqlite3
-  database: db/development.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: test-postgres_production
+  host: localhost
   pool: 5
-  timeout: 5000
+  username: postgres
+  password: postgres
+#production:
+  #adapter: sqlite3
+  #database: db/development.sqlite3
+  #pool: 5
+  #timeout: 5000
 
 cucumber:
   <<: *test
