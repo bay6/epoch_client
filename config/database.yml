@@ -23,8 +23,8 @@ production:
   encoding: unicode
   database: test-postgres_production
   pool: 5
-  username: test-postgres
-  password:
+  username: postgres
+  password: postgres
 #production:
   #adapter: sqlite3
   #database: db/development.sqlite3
