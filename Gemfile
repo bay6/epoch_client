@@ -12,6 +12,8 @@ gem 'annotate', git: 'git://github.com/ctran/annotate_models.git', group: :devel
 gem 'rails_admin'
 gem 'likeable'
 gem 'carrierwave'
+gem 'capistrano', group: :development
+gem 'rvm-capistrano', group: :development
 gem 'fog'
 gem 'acts-as-taggable-on'
 gem 'rmagick', require: 'RMagick'
