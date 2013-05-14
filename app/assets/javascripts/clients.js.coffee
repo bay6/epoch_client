@@ -26,11 +26,12 @@
     )
     $("input[type='hidden']").each ->
       clientName = $(this).data('client')
+      clientPath = $(this).data('path')
       map.addMarker
         lat: parseFloat($(this).data('latitude')),
         lng: parseFloat($(this).data('longitude')),
         infoWindow: {
-          content: '<p>Client Name:   ' + clientName + '</p>'
+          content: '<p>Client Name:   <a href=' + clientPath + '>' + clientName + '</a></p>'
         }
 
   $.fn.loadsinglemap = ->
