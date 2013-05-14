@@ -42,15 +42,16 @@
                 '浏览
             table class='table table-condensed'
               tr
-                td= client.name
+                td = client.name
               tr
-                td= client.opening_hour
+                td = client.opening_hour
               tr
-                td= client.address
+                td = client.address
               tr
-                td= client.phone_num
+                td = client.phone_num
               tr
-                td= client.description
+                td = client.description
               tr
-                td= link_to '地图', "http://maps.google.com/?q=#{client.latitude}, #{client.longitude}"
+                td = link_to '地图', "http://maps.google.com/?q=#{client.latitude}, #{client.longitude}"
+                td = link_to '更多详情', client 
   = paginate @clients
