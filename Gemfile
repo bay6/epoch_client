@@ -19,6 +19,7 @@ gem 'acts-as-taggable-on'
 gem 'rmagick', require: 'RMagick'
 gem 'jquery-rails'
 gem 'slim-rails'
+gem 'unicorn'
 gem 'debugger', group: [:development, :test]
 gem 'pg', group: :production
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
