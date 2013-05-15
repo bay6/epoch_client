@@ -1,0 +1,19 @@
+.masthead
+  .navbar
+    .navbar-inner
+      .container
+        ul class='nav'
+          - Category.all.each do |category|
+            li class="#{category.active? @category_id}"
+              = link_to category.name, send("#{path}_clients_path", {category_id: category.id, district_id: params[:district_id]})
+              -#hidden_field_tag :category_id, params[:category_id]
+    .btn-group
+      button.btn
+        = show_district @district_id 
+      button class='btn dropdown-toggle' data-toggle='dropdown'
+        span.caret
+      ul.dropdown-menu role='menu' aria-labelledby='dLabel'
+        - District.all.each do |district|
+          li
+            = link_to district.name, send("#{path}_clients_path", {district_id: district.id, category_id: params[:category_id]})
+            -#hidden_field_tag :district_id, params[:district_id]
