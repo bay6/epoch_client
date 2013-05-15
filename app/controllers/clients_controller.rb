@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
+  before_filter :get_params, only: [:list, :map]
   def index
       @clients = Client.by_category(params[:category_id]).by_district(params[:district_id])
 
@@ -11,11 +12,6 @@ class ClientsController < ApplicationController
   end
 
   def list
-    @district_id = params[:district_id]
-    @category_id = params[:category_id]
-    @clients = Client.by_category(params[:category_id]).by_district(params[:district_id])
-    @clients = Kaminari.paginate_array(@clients).page params[:page]
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @clients }
@@ -23,12 +19,6 @@ class ClientsController < ApplicationController
   end
 
   def map
-    @clients = if params[:category_id].blank?
-      Client.all
-    else
-      Client.where(category_id: params[:category_id])
-    end
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @clients }
@@ -105,5 +95,13 @@ class ClientsController < ApplicationController
       format.html { redirect_to clients_url }
       format.json { head :no_content }
     end
+  end
+private
+
+  def get_params
+    @district_id = params[:district_id]
+    @category_id = params[:category_id]
+    @clients = Client.by_category(params[:category_id]).by_district(params[:district_id])
+    @clients = Kaminari.paginate_array(@clients).page params[:page]
   end
 end
