@@ -1,3 +1,4 @@
+#encoding: utf-8
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
@@ -27,12 +28,14 @@
     $("input[type='hidden']").each ->
       clientName = $(this).data('client')
       clientPath = $(this).data('path')
+      clientDescription = $(this).data('description')
       map.addMarker
         lat: parseFloat($(this).data('latitude')),
         lng: parseFloat($(this).data('longitude')),
         infoWindow: {
-          content: '<p>Client Name:   <a href=' + clientPath + '>' + clientName + '</a></p>'
-        }
+          content: '<p>客户名称:   ' + clientName + '<a href=' + clientPath + '> 详情</a><br/>简介: ' + clientDescription + '</p>'
+        },
+        title: '客户名称: ' + clientName + '  简介: ' + clientDescription
 
   $.fn.loadsinglemap = ->
     map = undefined
@@ -46,6 +49,7 @@
       mapdiv.style.height = "400px"
     latitude = parseFloat($('#latitude').val())
     longitude = parseFloat($('#map').data('longitude'))
+    clientName = $('#map').data('name')
     console.log(latitude)
     map = new GMaps(
       div: "#map"
@@ -56,5 +60,5 @@
     map.addMarker
       lat: latitude
       lng: longitude
-      title: "Marker with InfoWindow"
+      title: clientName
 ) jQuery
