@@ -28,7 +28,7 @@ class Client < ActiveRecord::Base
     where(category_id: category_id) unless category_id.nil?
   end)
   scope :by_district, (lambda do |district_id|
-    where(district_id: district_id) unless district_id.nil?
+    where(district_id: district_id) unless district_id.nil? or district_id == 'all'
   end)
 
   def visit_number

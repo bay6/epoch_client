@@ -13,6 +13,8 @@
       button class='btn dropdown-toggle' data-toggle='dropdown'
         span.caret
       ul.dropdown-menu role='menu' aria-labelledby='dLabel'
+        li
+          = link_to '全部地区', send("#{path}_clients_path", {district_id: "all", category_id: params[:category_id]})
         - District.all.each do |district|
           li
             = link_to district.name, send("#{path}_clients_path", {district_id: district.id, category_id: params[:category_id]})
