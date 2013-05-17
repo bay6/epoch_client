@@ -23,6 +23,7 @@ class Client < ActiveRecord::Base
   acts_as_taggable_on :industry
   belongs_to :category
   belongs_to :district
+  default_scope order('category_id')
   scope :by_category, (lambda do |category_id|
     where(category_id: category_id) unless category_id.nil?
   end)
